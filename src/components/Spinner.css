@@ -1,0 +1,36 @@
+.spinner-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.spinner {
+  border-radius: 50%;
+  border-top: 2px solid #2563EB; /* primary-600 */
+  border-bottom: 2px solid #2563EB;
+  animation: spin 1s linear infinite;
+}
+
+/* Size variants */
+.spinner-small {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.spinner-medium {
+  width: 3rem;
+  height: 3rem;
+}
+
+.spinner-large {
+  width: 4rem;
+  height: 4rem;
+}
+
+/* Animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
