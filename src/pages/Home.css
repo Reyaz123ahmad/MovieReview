@@ -1,44 +1,67 @@
+/* Home.css */
 .home-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 0 1rem;
 }
 
 .hero-section {
+  background: linear-gradient(135deg, rgba(44, 62, 80, 0.8) 0%, rgba(52, 152, 219, 0.8) 100%);
+  border-radius: 8px;
+  padding: 4rem 2rem;
   margin-bottom: 3rem;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero-banner {
-  background: linear-gradient(to right, #2563EB, #1E40AF); /* from-primary-600 to-primary-700 */
-  border-radius: 1rem;
-  padding: 2rem;
-  color: white;
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://source.unsplash.com/random/1200x600/?movie');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.3;
 }
 
 .hero-title {
   font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  margin: 0 0 2rem 0;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-button {
   display: inline-block;
-  background-color: white;
-  color: #1E40AF;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
+  background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hero-button:hover {
-  background-color: #F3F4F6; /* gray-100 */
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
 }
 
 .movie-section {
@@ -46,25 +69,68 @@
 }
 
 .section-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f1c40f;
 }
 
 .movie-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
 }
 
-@media (min-width: 768px) {
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 0 0.5rem;
+  }
+  
+  .hero-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
   .movie-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
   }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+  
+  .hero-title {
+    font-size: 1.7rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.3rem;
+  }
+  
   .movie-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    margin: 0 auto;
   }
 }
