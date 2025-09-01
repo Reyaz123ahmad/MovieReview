@@ -87,7 +87,7 @@ import { Link } from 'react-router-dom';
 import { moviesAPI } from '../services/movies';
 import MovieCard from '../components/MovieCard';
 import LoadingSpinner from '../components/LoadingSpinner';
-import './Home.css'; // External CSS
+import './Home.css'; 
 
 const Home = () => {
   const [featuredMovies, setFeaturedMovies] = useState([]);
