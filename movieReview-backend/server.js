@@ -31,7 +31,7 @@ app.use(
             'http://localhost:5177',
             'https://localhost:5173',
             'https://localhost:5177',
-            'https://movie-review-azure.vercel.app/'
+            'https://movie-review-azure.vercel.app'
             
         ],
         credentials: true
